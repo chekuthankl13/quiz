@@ -18,6 +18,8 @@ class QuizBloc extends Bloc<QuizEvent, QuizState> {
     on<QuizLoadEvent>(_quizLoadEvent);
 
     on<QuizStartEvent>(_quizStartEvent);
+
+    on<QuizSubmitEvent>(_quizSubmitEvent);
   }
 
   FutureOr<void> _quizLoadEvent(
@@ -41,5 +43,14 @@ class QuizBloc extends Bloc<QuizEvent, QuizState> {
     } catch (e) {
       log(e.toString());
     }
+  }
+
+  FutureOr<void> _quizSubmitEvent(QuizSubmitEvent event, Emitter<QuizState> emit) async{
+    String mark = event.marks;
+    
+    emit(QuizSubmitLoading());
+    await Future.delayed(const Duration(seconds: 2));
+    emit(QuizSubmited(mark: mark));
+
   }
 }

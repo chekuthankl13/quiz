@@ -18,6 +18,8 @@ Widget loading() {
     return const Center(
       child:  Padding(
             padding: EdgeInsets.symmetric(horizontal: 100),
-            child: LinearProgressIndicator(),
+            child: LinearProgressIndicator(
+              color: Colors.blue,
+            ),
           ),
     );}

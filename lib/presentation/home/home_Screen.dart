@@ -67,7 +67,7 @@ class HomeScreen extends StatelessWidget {
                                     quizRepository:
                                         context.read<QuizRepository>())
                                   ..add(QuizStartEvent(quizId: data.quizId)),
-                                child: const QuestionScreen(),
+                                child:  QuestionScreen(txt: data.quizCategory),
                               )),
                     );
                   },

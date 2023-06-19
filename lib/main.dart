@@ -25,7 +25,16 @@ class MainApp extends StatelessWidget {
         //   create: (context) => SubjectRepository(),
         // ),
       ],
-      child: MaterialApp(
+      child: MultiBlocProvider(
+        providers: [
+          BlocProvider(
+            create: (context) => QuestionCubit(),
+          ),
+          // BlocProvider(
+          //   create: (context) => SubjectBloc(),
+          // ),
+        ],
+        child: MaterialApp(
       navigatorKey: navigatorKey,
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
@@ -36,6 +45,7 @@ class MainApp extends StatelessWidget {
               ),
       home:const SplashScreen()
     ),
+      )
     );
   }
 }

@@ -33,6 +33,16 @@ class QuizQuestionsLoaded extends QuizState {
   List<Object> get props => [questions];
 }
 
-class QuizSubmited extends QuizState {}
+class QuizSubmited extends QuizState {
+  final String mark;
+ const QuizSubmited({
+    required this.mark,
+  });
+    @override
+  List<Object> get props => [mark];
+}
+
+
+class QuizSubmitLoading extends QuizState {}
 
 

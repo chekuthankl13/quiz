@@ -12,13 +12,20 @@ class QuizLoadEvent extends QuizEvent {}
 
 class QuizStartEvent extends QuizEvent {
   final String quizId;
- const QuizStartEvent({
+  const QuizStartEvent({
     required this.quizId,
   });
 
-   @override
+  @override
   List<Object> get props => [quizId];
 }
 
-class QuizSubmitEvent extends QuizEvent {}
+class QuizSubmitEvent extends QuizEvent {
+  final String marks;
+  const QuizSubmitEvent({
+    required this.marks,
+  });
 
+  @override
+  List<Object> get props => [marks];
+}
